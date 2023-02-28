@@ -8,11 +8,13 @@ import mains.Player;
 public class armor {
     String name;
 
-    
+    boolean isActive = true;
     int id,reduction,money;
     public static armor[] armors = { new ligth_armor(), new mid_armor(), new heavy_armor() };
 
-    boolean isActive = true;
+    
+
+    
 
     public armor(String name, int id, int reduction, int money) {
         setName(name);
@@ -39,6 +41,18 @@ public class armor {
         
         if(Player.player.getPlayer_Character().getMoney()>=armors[selection-1].money){
             System.out.println("Satin aldiniz:"+armors[selection-1].getName());
+            armors[selection-1].setActive(false);
+            for(int i=0;i<armors.length;i++){
+                if(i==(selection-1)){
+
+                }
+                else{
+                    armors[i].setActive(true);
+                }
+            }
+
+
+            
             // Player.player.getPlayer_Inventory().setArmor(armors[selection-1]);
             // Player.player.player_Inventory.setArmor(armors[selection-1]);
             Game.player.player_Inventory.setArmor(armors[selection-1]);
@@ -86,6 +100,14 @@ public class armor {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean isActive) {
+        this.isActive = isActive;
     }
 
 }

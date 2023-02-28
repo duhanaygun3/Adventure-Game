@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import armor.armor;
 import mains.Game;
+import weapon.weapon;
 
 public class toolstore extends normal_loc{
     Scanner scanner=new Scanner(System.in);
@@ -37,6 +38,8 @@ public class toolstore extends normal_loc{
                 break;
         
             case 2:
+            weapon.weaponList();
+            weapon.weaponBuy();
 
             break;
         }

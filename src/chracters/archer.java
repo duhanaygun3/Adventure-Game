@@ -3,7 +3,7 @@ package chracters;
 public class archer extends character {
 
     archer() {
-        super(2, "Archer", 7, 18, 20);
+        super(2, "Archer", 7, 18, 200);
 
     }
 
